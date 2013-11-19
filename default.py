@@ -6,7 +6,6 @@
 
 import urllib, urllib2, xbmcplugin, xbmcaddon, xbmcgui, string, htmllib, os, platform, random, calendar, re
 import cookielib
-import mechanize
 import time
 from datetime import datetime, timedelta
 from BeautifulSoup import BeautifulStoneSoup
@@ -177,6 +176,10 @@ def INDEX(url,name,bysport=False):
                 plot += 'League: '+league+'\n'
             if location <> '' and location <> ' ':
                 plot += 'Location: '+location+'\n'
+	    if start <> '' and start <> ' ':
+		plot += 'Start Time: '+start+'\n'
+	    if length <> '' and length <> ' ':
+		plot += 'Length: '+length+' minutes'+'\n'
             plot += end
             infoLabels = {'title':ename,
                           'tvshowtitle':sport,
