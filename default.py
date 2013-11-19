@@ -177,7 +177,7 @@ def INDEX(url,name,bysport=False):
             if location <> '' and location <> ' ':
                 plot += 'Location: '+location+'\n'
 	    if start <> '' and start <> ' ':
-		plot += 'Start Time: '+start+'\n'
+		plot += 'Air Date: '+start+'\n'
 	    if length <> '' and length <> ' ':
 		plot += 'Length: '+length+' minutes'+'\n'
             plot += end
