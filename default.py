@@ -43,7 +43,6 @@ COOKIEFILE = os.path.join(ADDONDATA,'cookies.lwp')
 USERFILE = os.path.join(ADDONDATA,'userdata.xml')
 
 cj = cookielib.LWPCookieJar()
-confluence_views = [500,501,502,503,504,508]
 networkmap = {'n360':'ESPN3',
               'n501':'ESPN',
               'n502':'ESPN2',
@@ -117,7 +116,7 @@ def LISTSPORTS(url,name):
             sports.append(sport)
     for sport in sports:
         addDir(sport, url, 3, image)
-    xbmcplugin.addSortMethod(int(sys.argv[1]), xbmcplugin.SORT_METHOD_LABEL)
+    xbmcplugin.addSortMethod(int(sys.argv[1]), xbmcplugin.SORT_METHOD_VIDEO_SORT_TITLE)
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def INDEXBYSPORT(url,name):
@@ -157,6 +156,8 @@ def INDEX(url,name,bysport=False):
             starttime = int(event.findtext('startTimeGmtMs'))/1000
             endtime = int(event.findtext('endTimeGmtMs'))/1000
             start = time.strftime("%m/%d/%Y %I:%M %p",time.localtime(starttime))
+	    date = time.strftime("%m/%d/%Y",time.localtime(starttime))
+	    ename += ' - '+date
             if 'action=live' in url:
                 length = str((endtime - time.time())/60)
             else:
@@ -208,7 +209,6 @@ def INDEX(url,name,bysport=False):
                 mode = 10  
             addLink(ename, authurl, mode, thumb, thumb, infoLabels=infoLabels)
     xbmcplugin.setContent(pluginhandle, 'episodes')
-    xbmc.executebuiltin("Container.SetViewMode("+str(confluence_views[3])+")")
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def PLAYESPN1(url):
