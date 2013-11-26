@@ -159,9 +159,9 @@ def INDEX(url,name,bysport=False):
 	    date = time.strftime("%m/%d/%Y",time.localtime(starttime))
 	    ename += ' - '+date
             if 'action=live' in url:
-                length = str((endtime - time.time())/60)
+                length = str(int(round((endtime - time.time())/60)))
             else:
-                length = str((endtime - starttime)/60)
+                length = str(int(round((endtime - starttime)/60)))
             
             
             end = event.findtext('summary')
