@@ -15,10 +15,10 @@
 		<setting id="enablecustom" type="bool" label="30027" default="false" />
  		<setting type="sep" />
  		<setting id="clearcookies" type="bool" label="30019" default="false"/>
- 		<setting id="enablelogin" type="bool" label="30020" default="false"/>
+ 		<!--//<setting id="enablelogin" type="bool" label="30020" default="false"/>
 		<setting id="login_name" type="text" label="30017" enable="!eq(-1,false)" default="" />
 		<setting id="login_pass" type="text" label="30018" enable="!eq(-2,false)" option="hidden" default="" />
-		<setting id="logintype" type="enum" lvalues="30009|30010|30011|30012|30013|30014|30015" label="30016" enable="!eq(-3,false)" default="0"/>
+		<setting id="logintype" type="enum" lvalues="30009|30010|30011|30012|30013|30014|30015" label="30016" enable="!eq(-3,false)" default="0"/> //-->
  		<setting type="sep" />
 	</category>
 	<category label="Channels">   
